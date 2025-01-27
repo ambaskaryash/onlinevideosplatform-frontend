@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { CourseContextProvider } from "./context/CourseContext.jsx";
 import { UserContextProvider } from "./context/UserContext.jsx";
 
-export const server = "http://localhost:5001";
+export const server = "https://onlinevideosplatform-server-9cfp.vercel.app";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
