@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { CourseContextProvider } from "./context/CourseContext.jsx";
 import { UserContextProvider } from "./context/UserContext.jsx";
 
-export const server = "https://exercise.theflexingphysio.com:8080";
+export const server = "https://exercise.theflexingphysio.com";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
