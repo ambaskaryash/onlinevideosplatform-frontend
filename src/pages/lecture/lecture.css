@@ -1,94 +1,146 @@
 .lecture-page {
   display: flex;
   justify-content: space-between;
-  min-height: 80vh;
+  min-height: calc(100vh - 100px);
+  padding: 40px;
+  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif; /* Modern font */
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .lecture-page {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-  }
-
-  .left {
-    width: 70%;
-    padding: 10px;
-    align-items: center;
-
-    @media (max-width: 768px) {
-      width: 90%;
-    }
-  }
-
-  .right {
-    width: 30%;
-
-    .lecture-form {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0px, 2px, 4px, rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: auto;
-
-      h2 {
-        font-size: 24px;
-        color: #8a4baf;
-        margin-bottom: 15px;
-      }
-
-      form {
-        text-align: left;
-
-        label {
-          display: block;
-          margin-bottom: 5px;
-          font-size: 14px;
-          color: #333;
-        }
-
-        input {
-          width: 92%;
-          padding: 10px;
-          margin-bottom: 15px;
-          border: 1px solid black;
-          border-radius: 5px;
-        }
-      }
-    }
-
-    @media (max-width: 768px) {
-      width: 80%;
-      margin-bottom: 10px;
-    }
-
-    .lecture-number {
-      background-color: #fff;
-      padding: 10px;
-      border: 1px solid black;
-      margin-top: 10px;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #8a4baf;
-        color: white;
-      }
-    }
-
-    .active {
-      background-color: #8a4baf;
-      color: white;
-    }
+    padding: 20px;
   }
 }
 
-.progress {
-  width: 20%;
-  background-color: #333;
-  padding: 6px;
-  border-radius: 5px;
-  margin: 3px auto;
+.left {
+  width: 65%;
+  padding: 30px; /* Increased padding */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer, more prominent shadow */
+  background-color: #fff;
+  overflow: hidden; /* Prevents content from overflowing rounded corners */
+}
+
+@media (max-width: 768px) {
+  .left {
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}
+
+.right {
+  width: 30%;
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+  .right {
+    width: 90%;
+  }
+}
+
+.lecture-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.lecture-form h2 {
+  font-size: 2rem;
+  color: #8a4baf;
+  margin-bottom: 25px;
   text-align: center;
+}
+
+.lecture-form form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.lecture-form form input,
+.lecture-form form textarea {
+  width: calc(100% - 22px);
+  padding: 15px; /* Increased padding */
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* More rounded corners */
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.lecture-form form input:focus,
+.lecture-form form textarea:focus {
+  border-color: #8a4baf;
+  outline: none;
+  box-shadow: 0 0 8px rgba(#8a4baf, 0.15); /* Softer, more prominent shadow */
+}
+
+.lecture-number-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.lecture-number {
+  background-color: #fff;
+  padding: 15px 25px;
+  border: none; /* Removed border */
+  border-radius: 10px; /* More rounded corners */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+.lecture-number:hover {
+  background-color: #8a4baf;
   color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+.lecture-number.active {
+  background-color: #8a4baf;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Same shadow as hover */
+}
+
+.progress {
+  width: 100%;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  position: relative; /* Needed for absolute positioning of the label */
+}
+
+.progress-bar {
+  background-color: #8a4baf;
+  height: 100%;
+  width: 50%; /* Example progress (adjust as needed) */
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
 }

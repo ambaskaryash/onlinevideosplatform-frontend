@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Layout from "../Utils/Layout";
-import { useNavigate } from "react-router-dom";
-import { CourseData } from "../../context/CourseContext";
-import CourseCard from "../../components/coursecard/CourseCard";
-import "./admincourses.css";
-import toast from "react-hot-toast";
 import axios from "axios";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import CourseCard from "../../components/coursecard/CourseCard";
+import { CourseData } from "../../context/CourseContext";
 import { server } from "../../main";
+import Layout from "../Utils/Layout";
+import "./admincourses.css";
 
 const categories = [
   "Web Development",

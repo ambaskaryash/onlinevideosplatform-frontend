@@ -1,20 +1,113 @@
-.main-content {
+.dashboard-container {
+  padding: 20px; /* Reduced padding */
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem; /* Slightly smaller title */
+}
+
+.stats-grid {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
+}
 
-  .box {
-    margin-left: 20px;
-    background-color: #8a4baf;
-    padding: 5px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 5px;
-    color: white;
+.stat-box {
+  background-color: #ffffff;
+  padding: 20px; /* Reduced padding */
+  border-radius: 15px;
+  text-align: center;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px; /* Adjusted width */
+  height: 180px; /* Adjusted height */
+  flex-grow: 1;
+}
 
-    &:hover {
-      background-color: #432456;
+.stat-box:hover {
+  transform: translateY(-5px); /* Reduced lift */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+  font-size: 2.5rem; /* Slightly smaller icons */
+  margin-bottom: 10px;
+  color: #8a4baf;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.stat-value {
+  font-size: 1.6rem; /* Adjusted value size */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive adjustments - More comprehensive */
+@media (max-width: 320px) { /* Extra small screens (e.g., older iPhones) */
+  .stat-box {
+    width: 90%;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  .stat-icon {
+    font-size: 2rem;
+  }
+  .stat-value {
+    font-size: 1.4rem;
+  }
+  .dashboard-container h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 768px) { /* Small to medium screens (most phones and smaller tablets) */
+  .stat-box {
+    width: 45%; /* Two boxes per row */
+    height: auto;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  .stat-icon {
+    font-size: 2.2rem;
+  }
+  .stat-value {
+    font-size: 1.5rem;
+  }
+    .dashboard-container h1 {
+        font-size: 1.8rem;
     }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* Medium to larger tablets */
+  .stat-box {
+    width: 30%;  /* Three boxes per row */
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1025px) { /* Larger screens (desktops and larger tablets) */
+  .stat-box {
+    width: 250px; /* Back to the original width */
+    height: 180px;
   }
 }

@@ -5,44 +5,53 @@ const Testimonials = () => {
   const testimonialsData = [
     {
       id: 1,
-      name: "John Doe",
-      position: "Student",
+      name: "Manjiree Naik",
+      position: "Patient",
       message:
-        "This platform helped me learn so effectively. The courses are amazing and the instructors are top-notch.",
+        "Excellent treatment by Dr.Atharv.I got relief within a week for shoulder pain. Dr. Atharva gives personal attention to each patient.Thnx 🙏🙏Best wishes for ur bright future 🌹🌹",
       image:
-        "https://th.bing.com/th?q=Current+Bachelor&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
+        "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=",
     },
     {
       id: 2,
-      name: "Jane Smith",
-      position: "Student",
+      name: "Charudutt Shukla",
+      position: "Patient's Son",
       message:
-        "I've learned more here than in any other place. The interactive lessons and quizzes make learning enjoyable.",
+        "My father is 87 years old and was having acute knee pain,Dr.Mairals physiotherapy has minimised his knee pain, presently Dr.Mairal is working on improving his walking.",
       image:
-        "https://th.bing.com/th/id/OIP.GKAiW3oc2TWXVEeZAzrWOAHaJF?w=135&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=",
     },
     {
       id: 3,
-      name: "John Doe",
-      position: "Student",
+      name: "Priya Gandole",
+      position: "Patient",
       message:
-        "This platform helped me learn so effectively. The courses are amazing and the instructors are top-notch.",
+        "Dr Atharva personally attend every patient daily and which is best physiotherapy center khamla in Nagar l am extremely happy to recommend this doctor for physiotherapy he is excellent in his work",
       image:
-        "https://th.bing.com/th?q=Current+Bachelor&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
+        "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=",
     },
     {
       id: 4,
-      name: "Jane Smith",
-      position: "Student",
+      name: "Rajesh R",
+      position: "Patient",
       message:
-        "I've learned more here than in any other place. The interactive lessons and quizzes make learning enjoyable.",
+        "Dr. Atharva and his colleague are very knowledgeable as well humble in their approach towards the patients . I went there with moderate CTS in both my hands and within about a week or so got 90 percent relief, after which I continued the exercises at home. Now I am fine. Highly recommended for any Physiotherapy/Occupational therapy treatment.",
       image:
-        "https://th.bing.com/th/id/OIP.GKAiW3oc2TWXVEeZAzrWOAHaJF?w=135&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=",
     },
+    {
+      id: 5,
+      name: "Sudhir Deshpande",
+      position: "Patient",
+      message:
+        "I have taken physio treatment for one month.That time i was in terrible pain.earlier improvement was slow. but i must say that Dr Atharva is soft spoken.and he is very good at his job.i have improved a lot.thanks for his efferts. Urmila Deshpande.",
+      image:
+        "https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=",
+    }
   ];
   return (
     <section className="testimonials">
-      <h2>What our students say</h2>
+      <h2>What our Patients say about us!</h2>
       <div className="testmonials-cards">
         {testimonialsData.map((e) => (
           <div className="testimonial-card" key={e.id}>

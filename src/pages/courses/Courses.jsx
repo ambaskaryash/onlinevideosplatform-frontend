@@ -1,22 +1,23 @@
 import React from "react";
-import "./courses.css";
-import { CourseData } from "../../context/CourseContext";
 import CourseCard from "../../components/coursecard/CourseCard";
+import { CourseData } from "../../context/CourseContext";
+import "./courses.css";
 
 const Courses = () => {
   const { courses } = CourseData();
 
-  console.log(courses);
   return (
-    <div className="courses">
-      <h2>Available Courses</h2>
+    <div className="courses-page"> {/* Added a wrapper div */}
+      <div className="courses-content"> {/* Content area for better structure */}
+        <h2>Available Courses</h2>
 
-      <div className="course-container">
-        {courses && courses.length > 0 ? (
-          courses.map((e) => <CourseCard key={e._id} course={e} />)
-        ) : (
-          <p>No Courses Yet!</p>
-        )}
+        <div className="course-grid"> {/* Changed to grid for better responsiveness */}
+          {courses && courses.length > 0 ? (
+            courses.map((e) => <CourseCard key={e._id} course={e} />)
+          ) : (
+            <p className="no-courses">No Courses Yet!</p>
+          )}
+        </div>
       </div>
     </div>
   );

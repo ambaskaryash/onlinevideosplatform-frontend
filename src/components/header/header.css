@@ -2,37 +2,103 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 30px; /* Adjusted padding */
   background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
   position: relative;
+  font-family: 'Poppins', sans-serif; /* Modern font */
+}
 
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px; /* Adjusted padding for smaller screens */
+  }
+}
+
+.logo {
+  font-size: 1.8rem; /* Slightly smaller logo size */
+  font-weight: 600;
+  color: #8a4baf;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.logo:hover {
+  color: #633575; /* Darker color on hover */
+}
+
+@media (max-width: 768px) {
   .logo {
-    font-size: 25px;
-    font-weight: 600;
-    color: #8a4baf;
-
-    @media (max-width: 768px) {
-      font-size: 18px;
-    }
+    font-size: 1.4rem;
   }
+}
 
+.link {
+  display: flex;
+  gap: 2.5rem; /* Increased gap */
+}
+
+@media (max-width: 768px) {
   .link {
-    display: flex;
-    gap: 2rem;
-
-    @media (max-width: 768px) {
-      gap: 0.5rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: #333;
-      transition: 0.3s;
-
-      &:hover {
-        color: #8a4baf;
-      }
-    }
+    gap: 1rem;
   }
+}
+
+.link a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500; /* Slightly bolder link text */
+  transition: color 0.3s;
+  position: relative; /* For the underline effect */
+  padding: 5px 0; /* Add some vertical padding */
+}
+
+.link a:hover {
+  color: #8a4baf;
+}
+
+.link a::after { /* Underline effect */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Underline thickness */
+  background-color: #8a4baf;
+  transition: width 0.3s; /* Smooth width transition */
+}
+
+.link a:hover::after {
+  width: 100%; /* Full width underline on hover */
+}
+
+/* Optional: Add a responsive menu icon for smaller screens */
+.menu-icon {
+    display: none; /* Hidden by default on larger screens */
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Shown on smaller screens */
+    }
+    .link {
+        display: none; /* Hide the links on smaller screens */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 70px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+    .link.active { /* Show the links when the menu icon is clicked */
+        display: flex;
+    }
+    .link a {
+        padding: 10px; /* Add padding to links in the menu */
+        display: block; /* Make links take full width */
+    }
 }

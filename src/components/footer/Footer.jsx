@@ -11,17 +11,17 @@ const Footer = () => {
     <footer>
       <div className="footer-content">
         <p>
-          &copy; 2025 Your Online Chiropractic Friend. All rights reserved. <br /> Made
+          &copy; 2025 Your Online Physiotherapist. All rights reserved. <br /> Made
           with ❤️ <a href="https://novitaswebworks.in">Novitas WebWorks</a>
         </p>
         <div className="social-links">
-          <a href="">
+          <a href="#">
             <AiFillFacebook />
           </a>
-          <a href="">
+          <a href="#">
             <AiFillTwitterSquare />
           </a>
-          <a href="">
+          <a href="#">
             <AiFillInstagram />
           </a>
         </div>
