@@ -9,11 +9,14 @@ import Layout from "../Utils/Layout";
 import "./admincourses.css";
 
 const categories = [
-  "Web Development",
-  "App Development",
-  "Game Development",
-  "Data Science",
-  "Artificial Intelligence",
+  "Ankle Exercises",
+  "Back Exercises",
+  "Elbow Exercises",
+  "HIP Exercises",
+  "Knee Exercises",
+  "Neck Exercises",
+  "Shoulder Exercises",
+  "Wrist Exercises",
 ];
 
 const AdminCourses = ({ user }) => {
