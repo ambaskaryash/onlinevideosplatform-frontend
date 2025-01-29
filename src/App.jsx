@@ -1,27 +1,27 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminCourses from "./admin/Courses/AdminCourses";
+import AdminDashboard from "./admin/Dashboard/AdminDashboard";
+import AdminUsers from "./admin/Users/AdminUsers";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Header from "./components/header/Header";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
-import Verify from "./pages/auth/Verify";
 import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import Loading from "./components/loading/Loading";
+import { UserData } from "./context/UserContext";
 import About from "./pages/about/About";
 import Account from "./pages/account/Account";
-import { UserData } from "./context/UserContext";
-import Loading from "./components/loading/Loading";
-import Courses from "./pages/courses/Courses";
-import CourseDescription from "./pages/coursedescription/CourseDescription";
-import PaymentSuccess from "./pages/paymentsuccess/PaymentSuccess";
-import Dashbord from "./pages/dashbord/Dashbord";
-import CourseStudy from "./pages/coursestudy/CourseStudy";
-import Lecture from "./pages/lecture/Lecture";
-import AdminDashbord from "./admin/Dashboard/AdminDashbord";
-import AdminCourses from "./admin/Courses/AdminCourses";
-import AdminUsers from "./admin/Users/AdminUsers";
 import ForgotPassword from "./pages/auth/ForgotPassword";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 import ResetPassword from "./pages/auth/ResetPassword";
+import Verify from "./pages/auth/Verify";
+import CourseDescription from "./pages/coursedescription/CourseDescription";
+import Courses from "./pages/courses/Courses";
+import CourseStudy from "./pages/coursestudy/CourseStudy";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Home from "./pages/home/Home";
+import Lecture from "./pages/lecture/Lecture";
+import PaymentSuccess from "./pages/paymentsuccess/PaymentSuccess";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -64,7 +64,7 @@ const App = () => {
             />
             <Route
               path="/:id/dashboard"
-              element={isAuth ? <Dashbord user={user} /> : <Login />}
+              element={isAuth ? <Dashboard user={user} /> : <Login />}
             />
             <Route
               path="/course/study/:id"
@@ -78,7 +78,7 @@ const App = () => {
 
             <Route
               path="/admin/dashboard"
-              element={isAuth ? <AdminDashbord user={user} /> : <Login />}
+              element={isAuth ? <AdminDashboard user={user} /> : <Login />}
             />
 
             <Route
