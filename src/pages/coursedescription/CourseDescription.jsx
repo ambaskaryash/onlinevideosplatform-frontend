@@ -39,10 +39,10 @@ const CourseDescription = ({ user }) => {
     );
 
     const options = {
-      key: "rzp_live_z0SpZoNiknbVls", // Enter the Key ID generated from the Dashboard
+      key: "rzp_test_DY0dfk5NZq5Bsb", // Enter the Key ID generated from the Dashboard
       amount: order.id, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
-      name: "E learning", //your business name
+      name: "The Flexing Physio", //your business name
       description: "Learn with us",
       order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
 
