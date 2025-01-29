@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./auth.css";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Link, useNavigate } from "react-router-dom";
 import { UserData } from "../../context/UserContext";
-import ReCAPTCHA from "react-google-recaptcha";
+import "./auth.css";
 
 const Verify = () => {
   const [otp, setOtp] = useState("");
@@ -24,7 +24,7 @@ const Verify = () => {
       <div className="auth-form">
         <h2>Verify Account</h2>
         <form onSubmit={submitHandler}>
-          <label htmlFor="otp">Otp</label>
+          <label htmlFor="otp">OTP</label>
           <input
             type="number"
             value={otp}
@@ -32,10 +32,10 @@ const Verify = () => {
             required
           />
           <ReCAPTCHA
-            sitekey=" 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            sitekey="6LftCccqAAAAADmKvZUZsBsRnlcfaMjXUX1r-WWI"
             onChange={onChange}
           />
-          ,
+
           {show && (
             <button disabled={btnLoading} type="submit" className="common-btn">
               {btnLoading ? "Please Wait..." : "Verify"}
