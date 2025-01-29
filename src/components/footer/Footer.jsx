@@ -1,18 +1,18 @@
 import React from "react";
-import "./footer.css";
 import {
   AiFillFacebook,
-  AiFillTwitterSquare,
   AiFillInstagram,
+  AiFillTwitterSquare,
 } from "react-icons/ai";
+import "./footer.css";
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
         <p>
-          &copy; 2024 Your E-Learning Platform. All rights reserved. <br /> Made
-          with ❤️ <a href="">Prashant Kumar</a>
+          &copy; 2025 Your Online Chiropractic Friend. All rights reserved. <br /> Made
+          with ❤️ <a href="https://novitaswebworks.in">Novitas WebWorks</a>
         </p>
         <div className="social-links">
           <a href="">
