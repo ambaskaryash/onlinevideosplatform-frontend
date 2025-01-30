@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <div className="home">
         <div className="home-content">
-          <h1>Welcome to our The Flexing Physio</h1>
+          <h1>Welcome to The Flexing Physio</h1>
           <p>Perfect for Online Physiotherapist Exercises</p>
           <button onClick={() => navigate("/courses")} className="common-btn">
             Get Started
