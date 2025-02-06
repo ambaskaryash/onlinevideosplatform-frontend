@@ -39,7 +39,7 @@ const CourseDescription = ({ user }) => {
     );
 
     const options = {
-      key: "rzp_test_DY0dfk5NZq5Bsb", // Enter the Key ID generated from the Dashboard
+      key: "rzp_test_hXy4ugI3uQzUpc", // Enter the Key ID generated from the Dashboard
       amount: order.id, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "The Flexing Physio", //your business name
