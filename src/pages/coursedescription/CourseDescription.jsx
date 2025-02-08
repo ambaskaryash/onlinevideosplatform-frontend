@@ -76,21 +76,43 @@ const CourseDescription = ({ user }) => {
             console.error("Razorpay Verification Error:", error);
             toast.error(error.response ? error.response.data.message : "An error occurred during verification");
             setLoading(false);
+            navigate("/payment-failed"); // Redirect to payment failed page
           }
+        },
+        prefill: {
+          name: user.name,
+          email: user.email,
+          contact: "",
+        },
+        notes: {
+          address: "The Flexing Physio",
         },
         theme: {
           color: "#8a4baf",
         },
+        modal: {
+          ondismiss: function () {
+            setLoading(false);
+            toast.error("Payment cancelled");
+            navigate("/payment-failed"); // Redirect if payment is dismissed
+          },
+        },
       };
 
       const razorpay = new window.Razorpay(options);
-      razorpay.open();
+      razorpay.open().catch((err) => {
+        console.error("Razorpay Open Error:", err);
+        setLoading(false);
+        toast.error("Payment failed");
+        navigate("/payment-failed"); // Navigate to payment failed on error
+      });
     } catch (error) {
       console.error("Razorpay Checkout Error:", error);
       toast.error(
         error.response ? error.response.data.message : "An error occurred during checkout"
       );
       setLoading(false);
+      navigate("/payment-failed"); // Redirect on checkout error
     }
   };
 
