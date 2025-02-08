@@ -73,7 +73,8 @@ const CourseDescription = ({ user }) => {
             setLoading(false);
             navigate(`/payment-success/${razorpay_payment_id}`);
           } catch (error) {
-            toast.error(error.response.data.message);
+            console.error("Razorpay Verification Error:", error);
+            toast.error(error.response ? error.response.data.message : "An error occurred during verification");
             setLoading(false);
           }
         },
@@ -85,8 +86,9 @@ const CourseDescription = ({ user }) => {
       const razorpay = new window.Razorpay(options);
       razorpay.open();
     } catch (error) {
+      console.error("Razorpay Checkout Error:", error);
       toast.error(
-        error.response ? error.response.data.message : "An error occurred"
+        error.response ? error.response.data.message : "An error occurred during checkout"
       );
       setLoading(false);
     }
